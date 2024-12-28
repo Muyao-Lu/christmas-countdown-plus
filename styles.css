@@ -1,0 +1,233 @@
+h1, h2, h3{
+    text-align: center;
+    color: #c3bbd4;
+    text-shadow: 0px 0px 10px #7D709A;
+    font-family: 'Brush Script MT', cursive;
+}
+
+h1{
+    font-size: 7vmin;
+}
+
+h2{
+    font-size: 4vmin;
+}
+
+h3{
+    font-size: 2.5vmin;
+    width: 7vw;
+    height: 5vh;
+    justify-self: center;
+}
+
+body{
+    background-image: url("textures/bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    align-content: center;
+}
+
+@keyframes slow-snow-fade{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#foreground{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.5) 100%);
+    animation: 100s slow-snow-fade linear infinite;
+}
+
+#header-inner{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: #1C1450;
+    width: 60vw;
+    /* box-shadow: 0px 0px 10px #9b8fe3; */
+}
+
+#header-outer{
+    align-self: center;
+    position: relative;
+    top: 10vh;
+    left: calc(50vw - (60vw + 20px)/2);
+    width: calc(60vw + 20px);
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: #332D71;
+    padding: 5px;
+    box-shadow: 0px 0px 10px #908ad3;
+    /* justify-self: center; */
+}
+
+#countdown{
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    height: 40vh;
+    width: 50vw;
+    left: 25vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1vw;
+}
+
+.time-container{
+    display: inline;
+    float: left;
+    width: 7vw;
+    height: 20vh;
+    margin: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    justify-content: center;
+
+    transition: 0.5s scale translateY;
+}
+
+.time-container:hover{
+    transform: translateY(-2vh) scale(1.1);
+}
+
+#mo, #d, #h, #mi, #s{
+    font-size: 4vmin;
+    font-family: "sans-serif"
+}
+
+
+@keyframes fall{
+    0%{
+        opacity: 0;
+        transform: translateY(-100vh);
+        right: calc(var(--pos) *1vw);
+    }
+
+    50%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0vh);
+        right: calc(var(--pos) * 1vw);
+        transform: rotateX(calc(mod(var(--pos), var(--delay)) * 540deg));
+    }
+}
+
+
+@keyframes streak{
+    from{
+        bottom: var(--start-y);
+        left: var(--start-x);
+    }
+    to{
+        bottom: var(--end-y);
+        left: var(--end-x);
+    }
+}
+
+.snow{
+    position: fixed;
+    opacity: 0;
+    bottom: 0;
+    right: -1;
+    height: 15px;
+    width: 15px;
+    --delay: 2;
+    --pos: 101;
+
+    animation: fall 3s ease-in calc(var(--delay)*1s) infinite;
+
+}
+
+#shooting-star{
+    transform: rotate(45deg);
+    height: 4px;
+    width: 256px;
+
+}
+
+#star-container{
+    position: fixed;
+    --start-x: 0vmax;
+    --start-y: 100vmax;
+    --end-x: 100vmax;
+    --end-y: 0vmax;
+    animation: streak 1.75s linear 0s infinite;
+    
+}
+
+#audio-controls{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#background-music-button{
+    height: 10vmin;
+    width: 10vmin;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-color: #332D71;
+    text-shadow: 0px 0px 5px #7D709A;
+    color: #c3bbd4;
+    border-radius: 25%;
+    font-size: 2vmin;
+
+    transition: scale 0.2s;
+
+}
+
+#background-music-button:hover{
+    transform: scale(1.025);
+    background-color: #332D71;
+    box-shadow: 0px 0px 5px #7D709A;
+}
+
+#boba-guy-outer{
+    transform: rotate(45deg);
+    position: fixed;
+    padding: 1vmax;
+    left: -6vw;
+    bottom: -6vh;
+    transition-duration: 0.3s;
+    opacity: 0;
+    
+}
+
+#boba-guy{
+    width: auto;
+    height: 5vw;
+}
+
+#boba-guy-outer:hover{
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+}
+
+#boba-guy-speech-bubble{
+    size: 4vw;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.boba-guy-text{
+    font-family:"Arial";
+    font-size: 2vmin;
+}
+
