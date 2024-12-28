@@ -11,3 +11,4 @@ Winter Boba Drop requirements and where they are satisfied:
   <li>Colour: Background, text, and shooting stars</li>
   <li>Image: Shooting stars, and background</li>
 </ul>
+<p>P.S: Hover mouse on the bottom left for a special surprise</p>
