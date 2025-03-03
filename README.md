@@ -3,7 +3,7 @@ A simple web countdown for Christmas with music, fancy glowing letters, snowing 
 
 Made with HTML, CSS, and Javascript for the Hack Club Winter Boba Drop.
 
-Github page: https://muyao-lu.github.io/christmas-countdown/](https://muyao-lu.github.io/christmas-countdown-plus/
+Github page: https://muyao-lu.github.io/christmas-countdown-plus/
 
 Winter Boba Drop requirements and where they are satisfied:
 <ul>
